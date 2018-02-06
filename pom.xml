@@ -28,7 +28,8 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${org.springframework.version}</version>
-            <scope>runtime</scope>
+            <type>jar</type>
+            <!--<scope>runtime</scope>-->
         </dependency>
         <!--This following 2 dependency will add spring MVC pattern-->
         <dependency>
@@ -41,6 +42,16 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.5.Final</version>
+        </dependency>
+<!--        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>-->
     </dependencies>
 
     <build>
