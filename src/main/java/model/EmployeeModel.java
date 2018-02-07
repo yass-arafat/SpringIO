@@ -39,7 +39,7 @@ public class EmployeeModel {
             s.beginTransaction();
             s.save(e);
             s.getTransaction().commit();
-            s.close();
+//            s.close();
             
         } catch (Exception ex) {
             ex.printStackTrace();

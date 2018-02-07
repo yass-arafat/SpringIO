@@ -10,6 +10,25 @@
     </head>
 
     <body>
-        <h1>Spring Web MVC Project with Maven </h1>
+        <a href="redirectCreate.htm">Insert a new employee</a>
+        <table style="border-collapse: collapse" cellpadding="7px"
+            border="1">
+            <tr>
+                <th> ID </th>
+                <th> Name</th>
+                <th> Actions</th>
+            </tr>
+            <c:forEach items="${lst}" var="em">
+                <tr>
+                    <td>${em.id}</td>
+                    <td>${em.name}</td>
+                    <td>
+                        <a href="edit.htm?id=${em.id}">Edit </a>| 
+                        <a href="remove.htm?id=${em.id}"
+                           onclick="return confirm('Are you sure?')"> Remove </a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>

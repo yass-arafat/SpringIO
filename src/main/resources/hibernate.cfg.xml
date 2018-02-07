@@ -40,12 +40,22 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/spring_CRUD?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
-    <mapping class="entity.Employee"/>
-  </session-factory>
+    <session-factory>
+        
+        <!-- Database connection settings -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/spring_crud?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        
+        <!-- Drop and re-create the database schema on startup --> 
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Echo all executed SQL to stdout --> 
+        <property name="show_sql">1</property>
+        
+        <!-- Names the annotated entity class -->
+        <mapping class="entity.Employee"/>
+    </session-factory>
 </hibernate-configuration>
